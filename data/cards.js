@@ -1,0 +1,44 @@
+[
+    {
+        "name":"board",
+        "img":"./images/board.jpg"
+
+    },
+    {
+        "name":"disk",
+        "img":"./images/disk.jpg"
+    },
+    {
+        "name":"wood",
+        "img":"./images/wood.jpg"
+    },
+    {
+        "name":"ebony",
+        "img":"./images/ebony.jpg"
+    },
+    {
+        "name":"poker",
+        "img":"./images/ebony.poker"
+    },
+    {
+        "name":"board",
+        "img":"./images/board.jpg"
+
+    },
+    {
+        "name":"disk",
+        "img":"./images/disk.jpg"
+    },
+    {
+        "name":"wood",
+        "img":"./images/wood.jpg"
+    },
+    {
+        "name":"ebony",
+        "img":"./images/ebony.jpg"
+    },
+    {
+        "name":"poker",
+        "img":"./images/poker.jpg"
+    }
+]

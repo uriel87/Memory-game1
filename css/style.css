@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Frijole|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+* {
+  margin: 0;
+  padding: 0; }
+
+#cardsSec {
+  background-color: #d6dfec; }
+  #cardsSec h1 {
+    color: #201988;
+    text-align: center;
+    font-size: 90px;
+    margin: 0px 0px 40px 0px;
+    font-family: 'Kaushan Script', cursive;
+    padding-top: 50px; }
+  #cardsSec.opacity {
+    opacity: 0.3; }
+
+.cardBox {
+  width: 165px;
+  height: 228px;
+  display: inline-block;
+  margin: 20px 50px;
+  background-repeat: no-repeat; }
+
+.animation {
+  animation: changeShowCard 1.5s;
+  transform-style: flat;
+  transition: 0.4s 0.3s;
+  box-shadow: none; }
+
+.hideCard {
+  background-image: url(/images/frontCard.jpg);
+  animation: changeHideCard 1.5s;
+  transform-style: flat;
+  transition: 0.4s 0.3s;
+  box-shadow: 0px 0px 70px #FEBD10; }
+
+.showCard {
+  animation: changeShowCard 1.5s;
+  transform-style: flat;
+  transition: 0.4s 0.3s;
+  box-shadow: none; }
+
+.Dialog, .successDialogOpen, .successDialogClose {
+  position: fixed;
+  top: 40%;
+  left: 39%;
+  width: 20em;
+  height: 10em;
+  border: 1px solid #ccc;
+  border-radius: 45px;
+  background: -webkit-radial-gradient(circle, #ffffff, #ffffff, #999999);
+  background: -o-radial-gradient(circle, #ffffff, #ffffff, #999999);
+  background: -moz-radial-gradient(circle, #ffffff, #ffffff, #999999);
+  background: radial-gradient(circle, #ffffff, #ffffff, #999999);
+  transition: all 0.3s; }
+  .Dialog h1, .successDialogOpen h1, .successDialogClose h1 {
+    position: absolute;
+    color: #4c4f9c;
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Kaushan Script', cursive;
+    top: 8%;
+    left: 6%; }
+  .Dialog button, .successDialogOpen button, .successDialogClose button {
+    position: absolute;
+    color: #201988;
+    text-align: center;
+    font-size: 1em;
+    font-family: 'Kaushan Script', cursive;
+    top: 75%;
+    left: 31%;
+    width: 122px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background: -webkit-linear-gradient(#9ca1dc, #d6dfec, #9ca1dc);
+    background: -o-linear-gradient(#9ca1dc, #d6dfec, #9ca1dc);
+    background: -moz-linear-gradient(#9ca1dc, #d6dfec, #9ca1dc);
+    background: linear-gradient(#9ca1dc, #d6dfec, #9ca1dc); }
+
+.successDialogOpen {
+  animation: showSuccessDialog 0.5s forwards; }
+
+.successDialogClose {
+  animation: showSuccessDialogClose 0.5s forwards; }
+
+@keyframes changeShowCard {
+  100% {
+    -moz-transform: rotatey(-180deg);
+    -webkit-transform: rotatey(-180deg);
+    -o-transform: rotatey(-180deg);
+    -ms-transform: rotatey(-180deg);
+    transform: rotatey(-180deg); } }
+@keyframes changeHideCard {
+  100% {
+    -moz-transform: rotatey(180deg);
+    -webkit-transform: rotatey(180deg);
+    -o-transform: rotatey(180deg);
+    -ms-transform: rotatey(180deg);
+    transform: rotatey(180deg); } }
+@keyframes showSuccessDialog {
+  100% {
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    -o-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2); } }
+@keyframes showSuccessDialogClose {
+  100% {
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0); } }
+.board {
+  background-image: url("/images/board.jpg"); }
+
+.ebony {
+  background-image: url("/images/ebony.jpg"); }
+
+.disk {
+  background-image: url("/images/disk.jpg"); }
+
+.wood {
+  background-image: url("/images/wood.jpg"); }
+
+.poker {
+  background-image: url("/images/poker.jpg"); }
+
+.sparks {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px #fff; }
+
+.sparks.sparks1 {
+  top: 300px;
+  left: 500px;
+  animation: bang 1.2s linear infinite;
+  animation-delay: 0.8s; }
+
+.sparks.sparks2 {
+  top: 500px;
+  left: 300px;
+  animation: bang 0.8s linear infinite;
+  animation-delay: 1s; }
+
+.sparks.sparks3 {
+  top: 480px;
+  left: 1070px;
+  animation: bang 1s linear infinite;
+  animation-delay: 0.5s; }
+
+.sparks.sparks4 {
+  top: 600px;
+  left: 300px;
+  animation: bang 0.9s linear infinite;
+  animation-delay: 0.4s; }
+
+.sparks.sparks5 {
+  top: 280px;
+  left: 900px;
+  animation: bang 0.8s linear infinite;
+  animation-delay: 0.7s; }
+
+@keyframes bang {
+  100% {
+    box-shadow: -34px -4px 143px -116.66667px #1a00ff, -37px -137.66667px #4800ff, -181px -38.66667px magenta, 9px -345.66667px #00ffee, 204px -342.66667px #e1ff00, -236px -1.66667px #008cff, 144px -58.66667px #ccff00, -115px 71.33333px #ff00b3, 30px -123.66667px #ff4800, 158px 70.33333px #7700ff, 8px -157.66667px #6200ff, -234px -235.66667px #0091ff, -213px -304.66667px #ff00b7, -228px 27.33333px #ffcc00, 164px -142.66667px #ff0040, -131px -83.66667px #c400ff, -224px 62.33333px #7bff00, 7px -266.66667px #51ff00, 89px -370.66667px #00ff6f, 40px -356.66667px #00ff6a, -141px -396.66667px #ffaa00, 51px -365.66667px #ff0900, -103px -310.66667px #0040ff, -248px 65.33333px #ffc400, 230px 1.33333px #d0ff00, 89px -225.66667px #f700ff, 96px 32.33333px #ff6f00, 234px 4.33333px #ff6a00, -148px -319.66667px blue, -221px -114.66667px #002fff, -206px -383.66667px #26ff00, 156px -248.66667px #9100ff, -134px 47.33333px #c8ff00, 184px -133.66667px #ff3c00, -111px 40.33333px #00f7ff, -48px 43.33333px #ddff00, -217px -310.66667px #ff3700, 102px 63.33333px #0059ff, -230px -48.66667px #3700ff, 39px -309.66667px #00ff95, -202px -318.66667px #ff0048, -27px -136.66667px #00ff11, -221px -227.66667px #2fff00, -66px -144.66667px #0d00ff, 250px -384.66667px #0055ff, 55px 42.33333px #ff6a00, -73px -244.66667px #ff3c00, 49px -246.66667px #00ff48, -106px -324.66667px #ff00b7, -246px -45.66667px #84ff00, -194px -175.66667px #b3ff00, 117px 82.33333px #4dff00, 207px -74.66667px #ff5500, 6px -315.66667px #ff00ee, -97px -116.66667px #1e00ff, -76px -390.66667px #00ff48, -124px -56.66667px #ff00b7, -157px -211.66667px #00f2ff, 160px -361.66667px #ff0022, 52px 53.33333px #bfff00, 35px -74.66667px #ff00e6, 119px -249.66667px #ff9500, -41px -80.66667px #5e00ff, 97px -101.66667px #9d00ff, -134px -42.66667px #ff0015, -116px 59.33333px #00ffcc, -186px -374.66667px #7bff00, -128px -223.66667px #004dff, 58px -182.66667px #e600ff, -243px -368.66667px #8cff00, 46px -225.66667px #4800ff, -130px -404.66667px #ffe600, -99px 66.33333px #ff00b3, -144px -343.66667px #001aff, -190px 66.33333px #2f00ff, -4px -181.66667px #ff0900, 77px -206.66667px #ff0011, 40px -329.66667px #33ff00, -231px -414.66667px #ff8400, 247px -348.66667px #ff004d, -173px -172.66667px #6a00ff, -187px -128.66667px #008cff, -51px -182.66667px #ff3c00, -131px -380.66667px #ffbb00, -33px -101.66667px #5900ff, 75px -188.66667px #ff3700, 223px -362.66667px #ffae00, 166px -37.66667px #006aff, -150px -407.66667px #b3ff00, 122px -396.66667px #002bff, 174px -97.66667px #aaff00, 88px -244.66667px #00eeff, -113px 69.33333px #ff0004, -188px -341.66667px #00ffa2, 237px -412.66667px #ffea00, 131px -172.66667px #ff00f2, -211px 18.33333px #ff6200, 5px -282.66667px #aa00ff, -15px -203.66667px magenta, 204px 30.33333px #0011ff;
+    animation: gravity 1s 1.5s linear infinite; } }
+
+/*# sourceMappingURL=style.css.map */

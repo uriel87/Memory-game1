@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'app'>
+<head>
+    <meta charset="UTF-8">
+    <title>Memory game</title>
+
+    <!--css-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <!--script-->
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="js/memory.controller.js"></script>
+
+
+</head>
+    <body ng-controller = 'memoryCtl'>
+        <section id="cardsSec" ng-class="gameOver">
+            <h1>MEMORY GAME</h1>
+            <div id = {{card.id}} ng-class="card.style" ng-repeat="card in cardsList track by $index" ng-click="pickCard($index)"></div>
+        </section>
+        <section ng-class="successDialogWindow" ng-show="successDialog">
+            <h1>WINNER!</h1>
+            <button ng-click="playAgain()">PLAY AGAIN</button>
+        </section>
+        <section class="sparks sparks{{i}}" ng-repeat="i in [1,2,3,4,5]" ng-show="successDialog"></section>
+    </body>
+</html>
