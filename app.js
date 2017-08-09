@@ -10,7 +10,8 @@ app.use('/data', express.static(__dirname + './data'));
 app.use('/images', express.static(__dirname + './images'));
 
 
-app.use('/', express.static("./"));
+// app.use('/', express.static("./"));
+app.use('/', express.static('./')).listen(process.env.PORT || 8080);
 
-app.listen(process.env.port || 8080);
+// app.listen(process.env.PORT || 8080);
 console.log("Listen to port 8080");
