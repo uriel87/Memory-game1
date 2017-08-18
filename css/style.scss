@@ -4,12 +4,144 @@
 
 @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
+@import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
+
+@font-face {
+  font-family: 'comic2';
+  src: url('fonts/comic2.ttf');
+}
+
+
+$primary-color: #ffce28;
+$secondary-color: #ff0038;
+$third-color: #00cffa;
+
+
+@mixin websiteTitle {
+  position: relative;
+  top: 50px;
+  font-size: 80px;
+  color: #ff0038;
+  font-family: comic2,Verdana;
+  margin: auto;
+  text-align: center;
+}
+
+
 
 
 * {
   margin: 0;
   padding: 0;
 }
+
+
+#mainHeader {
+
+  background-image: url(/images/mainBg.jpg);
+  color: $secondary-color;
+  height: 400px;
+  text-align: center;
+  font-family: comic2,Verdana;
+
+  #profileUser {
+    position: absolute;
+    width: 250px;
+    top: 25px;
+    right: 15px;
+  }
+
+  .profileSec {
+    font-size: 20px;
+    border-radius: 15px;
+    background-color: transparent;
+    color: #ff0038;
+    font-family: 'Goudy Bookletter 1911', serif;
+    font-weight: bolder;
+    border-color: #ff0038;
+  }
+
+  .subProfileSec {
+    background: transparent;
+    font-family: 'Goudy Bookletter 1911', serif;
+    padding: 10px 10px;
+    font-size: 20px;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+    }
+
+  }
+
+
+  nav {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    ul {
+      top: 14px;
+      position: relative;
+      margin: auto;
+      width: 80%;
+      li {
+        float: left;
+        background-color: #00cffa;
+        text-decoration: none;
+        list-style-type: none;
+        width: 170px;
+        border-radius: 20px;
+        margin: 10px 2%;
+        font-size: 15px;
+        height: 43px;
+        line-height: 45px;
+        cursor: pointer;
+        a {
+          color: #1b0c96;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  h1 {
+    @include websiteTitle;
+  }
+
+  h2 {
+    position: relative;
+    top: 55px;
+  }
+
+}
+
+
+#logInPage {
+  background-image: url(/images/mainBg.jpg);
+  height: 662px;
+
+  h1 {
+    @include websiteTitle;
+  }
+
+  button {
+    background: linear-gradient(#394499, #3376b5, #394499);
+    font-size: 20px;
+    margin: auto;
+    display: block;
+    border: navajowhite;
+    width: 350px;
+    border-radius: 20px;
+    top: 130px;
+    position: relative;
+    color: #dadeea;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+}
+
+
 
 
 #cardsSec {
