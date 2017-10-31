@@ -1,7 +1,7 @@
 
-app.controller('logInCtl', ['$scope', '$timeout', '$window', '$location', 'userCookiesService','facebookApiService', function ($scope, $timeout, $window, $location, userCookiesService, facebookApiService) {
+app.controller('logInCtl', ['$scope', '$timeout', '$window', '$location', 'userService','facebookApiService', function ($scope, $timeout, $window, $location, userService, facebookApiService) {
 
-    if(userCookiesService.checkUserCookies()){
+    if(userService.checkUserLogIn()){
         $location.path('/main').replace();
     }
 

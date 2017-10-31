@@ -1,7 +1,4 @@
-
-
-
-app.service('facebookApiService', ['$cookies', 'userCookiesService', function ($cookies, userCookiesService) {
+app.service('facebookApiService', ['$cookies','$location', 'userService', function ($cookies, $location, userService) {
 
     (function () {
         window.fbAsyncInit = function() {
@@ -24,28 +21,60 @@ app.service('facebookApiService', ['$cookies', 'userCookiesService', function ($
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
 
+    this.logOut = function (){
+        userService.removeUserCookies();
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                FB.getLoginStatus(function (response) {
+                    if (response && response.status === 'connected') {
+                        FB.logout(function (response) {
+                        });
+                    }
+                });
+            }
+        })
+        $location.path('/');
+    };
+
+    this.checkLogIn = function (){
+
+        FB.getLoginStatus(function(response) {
+            if (response.status === 'connected') {
+                var accessToken = response.authResponse.accessToken;
+                console.log('response.status - ' + JSON.stringify(response.status));
+
+            }
+        } );
+
+        // FB.getLoginStatus(function (response) {
+        //     if (response && response.status != 'connected') {
+        //         $location.path('/');
+        //     }
+        // });
+    }
+
 
     this.logIn = function (){
         FB.getLoginStatus(function(response) {
             if (response.status === 'connected') {
-                // FB.logout(function(response) {
-                //     //document.location.reload();
-                // });
+
             }
             else {
                 FB.login(function(response) {
-                    // console.log('response - ' + response);
                     if (response.authResponse) {
-                        // console.log('response.status - ' + response.status);
-                        // console.log('Welcome!  Fetching your information.... ');
-                        FB.api('/me', {fields: 'name, picture, email'}, function(response) {
-                            // console.log('Good to see you, ' + response + '.');
-                            userCookiesService.putUserCookies(response.name, response.email, response.picture.data.url);
+                        // var accessToken = response.authResponse.accessToken;
+                        // console.log('accessToken - ' + JSON.stringify(accessToken));
+                        FB.api('/me', {fields: 'name, picture, email, birthday'}, function(response) {
+                            console.log('user details - ' + JSON.stringify(response));
+                            userService.putUserCookies(response.name, response.email, response.picture.data.url);
+                            userService.addUserToDb(response.name, response.email, response.picture.data.url, response.birthday);
+
+                            $location.path('/main');
                         });
                     } else {
                         console.log('User cancelled login or did not fully authorize.');
                     }
-                });
+                }, {scope: 'user_birthday'});
             }
         });
     }

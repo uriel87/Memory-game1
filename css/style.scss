@@ -19,15 +19,12 @@ $third-color: #00cffa;
 
 @mixin websiteTitle {
   position: relative;
-  top: 50px;
   font-size: 80px;
   color: #ff0038;
   font-family: comic2,Verdana;
   margin: auto;
   text-align: center;
 }
-
-
 
 
 * {
@@ -38,48 +35,34 @@ $third-color: #00cffa;
 
 #mainHeader {
 
-  background-image: url(/images/mainBg.jpg);
+  background-image: url(/images/bgMain.jpg);
   color: $secondary-color;
   height: 400px;
   text-align: center;
   font-family: comic2,Verdana;
 
-  #profileUser {
-    position: absolute;
-    width: 250px;
-    top: 25px;
-    right: 15px;
+  h1 {
+    @include websiteTitle;
+    top: 50px;
   }
 
-  .profileSec {
-    font-size: 20px;
-    border-radius: 15px;
-    background-color: transparent;
-    color: #ff0038;
-    font-family: 'Goudy Bookletter 1911', serif;
-    font-weight: bolder;
-    border-color: #ff0038;
+  h2 {
+    position: relative;
+    top: 55px;
   }
 
-  .subProfileSec {
-    background: transparent;
-    font-family: 'Goudy Bookletter 1911', serif;
-    padding: 10px 10px;
-    font-size: 20px;
-    width: 100%;
+}
 
-    a {
-      text-decoration: none;
-    }
+ .main-menu {
 
-  }
+   @include websiteTitle;
 
-
-  nav {
+   nav {
     width: 80%;
     margin: auto;
     display: grid;
-    ul {
+
+     ul {
       top: 14px;
       position: relative;
       margin: auto;
@@ -92,27 +75,56 @@ $third-color: #00cffa;
         width: 170px;
         border-radius: 20px;
         margin: 10px 2%;
+        font-family: 'Goudy Bookletter 1911', serif;
         font-size: 15px;
+        font-weight: bold;
         height: 43px;
         line-height: 45px;
         cursor: pointer;
         a {
+          display: block;
           color: #1b0c96;
           text-decoration: none;
         }
       }
     }
   }
+}
 
-  h1 {
-    @include websiteTitle;
+.user-settings {
+
+  z-index: 1;
+
+  &#profileUser {
+    position: absolute;
+    width: 250px;
+    top: 10px;
+    right: 0px;
+    text-align: center;
+
+    .profileSec {
+      font-size: 20px;
+      border-radius: 15px;
+      background-color: transparent;
+      color: #ff0038;
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-weight: bolder;
+      border-color: #ff0038;
+    }
+
+    .subProfileSec {
+      background: transparent;
+      font-family: 'Goudy Bookletter 1911', serif;
+      padding: 10px 10px;
+      font-size: 20px;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+      }
+
+    }
   }
-
-  h2 {
-    position: relative;
-    top: 55px;
-  }
-
 }
 
 
@@ -122,6 +134,7 @@ $third-color: #00cffa;
 
   h1 {
     @include websiteTitle;
+    top: 50px;
   }
 
   button {
@@ -139,6 +152,80 @@ $third-color: #00cffa;
     cursor: pointer;
     padding: 10px;
   }
+}
+
+
+#gamesPage {
+  background-image: url(/images/bgGamesPage.jpg);
+  height: 100%;
+
+  #MyGamesArea {
+    width: 80%;
+    height: 600px;
+    border: 1px solid #767aff;
+    margin: 30px auto;
+    padding: 20px;
+
+    button {
+      display: block;
+      float: right;
+      //font-family: 'Goudy Bookletter 1911', serif;
+      //width: 170px;
+      //border-radius: 5px;
+      //height: 40px;
+      //border: navajowhite;
+      //background: #767aff;
+      //color: #efefef;
+      font-size: 1.2em;
+    }
+  }
+
+
+}
+
+.lightBox {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 0.3s linear all;
+  opacity:1;
+
+  .addImages {
+    position: fixed;
+    z-index: 11;
+    width: 60%;
+    height: 500px;
+    text-align: center;
+    margin: auto;
+    background-color: #b3ddf5;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .closeBtn {
+    display: block;
+    padding: 5px 10px;
+    font-size: 30px;
+    outline: none;
+  }
+
+  &.ng-hide {
+    opacity:0;
+  }
+
+  .uploadBtn {
+    float: left;
+    position: relative;
+    margin: 10px;
+  }
+
 }
 
 

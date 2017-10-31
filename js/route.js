@@ -5,14 +5,18 @@ app.config(["$routeProvider",'$locationProvider', function($routeProvider, $loca
     $locationProvider.hashPrefix('');
 
     $routeProvider
-        .when("/memoryGame", {
-            templateUrl: '../views/memoryGame.html',
-            controller: 'memoryGameCtl'
-        })
         .when("/main", {
             templateUrl: '../views/main.html',
             controller: 'mainCtl',
         })
+        .when("/myGames", {
+            templateUrl: '../views/myGames.html',
+            controller: 'myGamesCtl'
+        })
+        // .when("/memoryGame", {
+        //     templateUrl: '../views/memoryGame.html',
+        //     controller: 'memoryGameCtl'
+        // })
         .when("/about", {
             templateUrl: '../views/about.html'
             // controller: 'aboutCtl'

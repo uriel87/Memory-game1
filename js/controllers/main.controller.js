@@ -1,22 +1,17 @@
 
 
 
-app.controller('mainCtl', ['$scope', '$location', 'userCookiesService', function ($scope, $location, userCookiesService) {
+app.controller('mainCtl', ['$scope','$location','userService','facebookApiService', function ($scope, $location, userService, facebookApiService) {
 
-    if(!userCookiesService.checkUserCookies()){
+    if(!userService.checkUserLogIn()){
         $location.path('/').replace();
     }
 
-    $scope.userDetails = userCookiesService.getUserCookies();
+    // facebookApiService.checkLogIn();
 
     $scope.logOut = function () {
-        userCookiesService.removeUserCookies();
-        //console.log("logOut user " + $scope.userDetails.userName);
-        FB.getLoginStatus(function (response) {
-            if (response && response.status === 'connected') {
-                FB.logout(function(response) {});
-            }
-        });
-        $location.path('/');
+        facebookApiService.logOut();
+        console.log("logOut user " + $scope.userDetails.userName);
     }
+
 }]);
